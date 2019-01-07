@@ -1,0 +1,49 @@
+<html>
+    <head>
+     <title></title>
+	<head>
+	
+	<body>
+	    <center>
+	    <h1>tables de multiplication</h1>
+		<form method = "post" action = "table_de_multiplication.php">
+		  NOTE :  <input type ="text" name="note"> <br/>
+		  <input type="reset" name="Annuler" value="Annuler">
+		  <input type="submit" name="afficher" value="afficher">
+		</form>
+		
+		<?php
+		 if (isset($_POST["afficher"]))
+		 {
+			$note = $_POST["note"];
+			$notemini = $20;
+			$notemaxi = $0;
+			$moy = $0;
+			$n = $1;
+	
+			while($n<=$10)
+			{
+				printf("saisir une note:");
+				scanf("%f", & $note);
+				
+				if($note < $notemini)
+				{
+					$notemini=$note;
+				}
+				if($note > $notemaxi)
+				{
+					$notemaxi=$note;
+				}
+				$moy=$moy+$note;
+				$n=$n+1;
+			}
+			$moy=$moy/10
+			printf("la note minimale est %f <br/>", $notemini);
+			printf("la note maximale est %f <br/>", $notemaxi);
+			printf("la moyenne est de %f", $moy);
+			
+			}		
+		?>
+		</center>
+	</body>
+</html>	
